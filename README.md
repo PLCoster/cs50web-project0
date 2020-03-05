@@ -8,10 +8,10 @@
 
 The aim of this project was to develop a simple homepage website, using the following technologies:
 
-* **HTML
-* **CSS
-* **Bootstrap
-* **SASS / SCSS
+* **HTML**
+* **CSS**
+* **Bootstrap**
+* **SASS / SCSS**
 
 
 ### Project Requirements:
