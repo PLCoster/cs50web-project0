@@ -3,7 +3,7 @@
 /* 273E47
   BD632F
   D8973C
-  D8C99B
+  EDE6D1
   A4243B
 
 /*
@@ -12,7 +12,7 @@
   ========================================
 */
 body {
-  background: #D8C99B;
+  background: #EDE6D1;
   color: #273E47;
   font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
@@ -54,12 +54,28 @@ NAVBAR
 ==========================
 */
 
-.navbar {
+#navbar {
   font-weight: 400;
+  background-color: #273E47;
 }
 
 #logo {
-  color: #fff;
-  font-weight: 400;
+  color: #DFA95F;
 }
+
+#logo:hover {
+  color: #EDE6D1;
+}
+
+/*
+==========================
+FOOTER
+==========================
+*/
+
+#footer {
+  color: #DFA95F;
+  background-color: #273E47;
+}
+
 
