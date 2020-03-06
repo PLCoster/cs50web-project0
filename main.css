@@ -6,19 +6,21 @@
   EDE6D1
   A4243B
 
+  light bg
+  #E9ECEF
 /*
   ========================================
   Custom styles
   ========================================
 */
 body {
-  background: #EDE6D1;
+  background-color: #E9ECEF;
   color: #273E47;
   font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 h1, h2, h3, h4 {
-  color: #648880;
+  color: #273E47;
 }
 
 h1 {
@@ -41,12 +43,19 @@ h5 {
   font-weight: 400;
   text-transform: uppercase;
 }
+
 strong {
   font-weight: 400;
 }
+
 cite, em {
   font-style: italic;
 }
+
+.text-muted {
+  color:  #273E47;
+}
+
 
 /*
 ==========================
@@ -69,6 +78,16 @@ NAVBAR
 
 /*
 ==========================
+JUMBOTRON
+==========================
+*/
+
+.jumbotron {
+  padding-bottom: 0;
+}
+
+/*
+==========================
 FOOTER
 ==========================
 */
@@ -77,5 +96,19 @@ FOOTER
   color: #DFA95F;
   background-color: #273E47;
 }
+
+/*
+===========================
+BUTTONS
+===========================
+*/
+
+.btn-primary {
+  color: #DFA95F;
+  background-color:  #273E47;
+  border-color: #273E47;
+}
+
+
 
 
