@@ -84,11 +84,17 @@ JUMBOTRON
 
 .jumbotron {
   padding-bottom: 0;
+  margin-top: 20px;
+}
+
+.lead {
+  font-size: 18px;
 }
 
 .profile-img {
   width: 100%;
   padding: 10px 0;
+  border-radius: 10px;
 }
 
 /*
