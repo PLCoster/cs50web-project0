@@ -9,7 +9,7 @@
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
       <link rel="stylesheet" href="main.css">
       <meta charset="utf-8">
-        <title>Blog - N-Queens</title>
+        <title>Blog - N-Queens - All Solutions</title>
     </head>
     <body>
       <header>
@@ -52,15 +52,133 @@
           <div class="col-md-12 blog-main">
 
             <div class="blog-post">
-              <h2 class="blog-post-title">The N-Queens Puzzle</h2>
+              <h2 class="blog-post-title">The N-Queens Puzzle - Part 1: All Solutions</h2>
               <p class="blog-post-meta">March 7, 2020 by <a href="#">Paul</a></p>
 
-              <p>In this post I take a brief look at the N-Queens Puzzle, and some algorithms to solve it, including backtracking.</p>
+              <p>In this post I take a brief look at the N-Queens Puzzle, and some algorithms to solve it, including recursion and backtracking.</p>
               <hr>
-              <h2>The Puzzle</h2>
-              <p> The <strong>N-Queens</strong> puzzle is a generalisation of the <strong>8-Queens</strong> puzzle originally published by Max Bezzel in 1848. The challenge of the 8-Queens puzzle is to place eight chess queens on a standard 8x8 chessboard such that no piece can take any other piece. In essence this means that no two queens can share the same row, column or diagonal. </p>
-              <h3>Sub-heading</h3>
-              <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+              <h3>The Puzzle</h3>
+              <p> The <strong>N-Queens</strong> puzzle is a generalisation of the <strong>8-Queens</strong> puzzle originally published by Max Bezzel in 1848. The challenge of the 8-Queens puzzle is to place eight chess queens on a standard 8x8 chessboard such that no piece can take any other piece. In essence this means that no two queens can share the same row, column or diagonal. The <strong>N-Queens</strong> puzzle extends this to finding solutions for N chess queens being placed on an NxN chessboard.</p>
+
+              <p> Put an Image Here</p>
+
+              <p>In these posts we will take a look at using algorithms to answer two questions about the N-Queens Puzzle:
+                <ol>
+                  <li><strong>For a board of size N, how many solutions to the puzzle are there?</strong></li>
+                  <li><strong>For a board of size N, how can we find any single solution to the puzzle?</strong></li>
+                </ol>
+              </p>
+
+              <p>In this first post we will look at writing an algorithm sort question 1.</p>
+
+              <h3>1. Recursively Finding All Valid Solutions:</h3>
+              <p>We can start to get an idea of the scaling of the N-Queens problem using combinatorics. Given N Queens and an NxN chessboard to place them on, how many ways can the queens be placed? The first Queen we try to place has N&sup2; positions it can be placed, the second has (N&sup2; - 1) positions etc., until we try to place the Nth queen which has (N&sup2; - (N - 1)) positions it can be placed. This gives us </p>
+              <p><strong> N&sup2; *  (N&sup2; - 1) * (N&sup2; - 2) * ... * (N&sup2; - (N - 1)) </strong></p>
+              <p>possible positions. Using factorials, this can be simplified to:</p>
+              <p><strong>(N&sup2;)! / (N&sup2;-N)!</strong></p>
+              <p>We also need to account for the fact that each of the N queens are equivalent to each other, so given a board with N queens on it, switching the positions of any of the queens does not give us a different solution. Essentially we care about the number of combinations that N queens can be placed on the NxN chessboard, not the number of permutations. Therefore we need to divide by number of permutations of N queens, which is N!. This gives the total number of ways to place N queens on an NxN chessboard as:</p>
+              <p><strong>(N&sup2;)! / ((N&sup2;-N)! * N!)</strong></p>
+              <p> Using the above formula, we can calculate the number of different ways we can place N queens on the NxN chess board. In the table below this is calculated from N=1 to N=12, and N=27, alongside the known number os solutions to the N-Queens problem for each N. As of March 2020, the total number of solutions to the N-Queens problem has been calculated up to N=27 <a href="https://github.com/preusser/q27">(N=27 was determined in Sep 2016)</a>.</p>
+              <table class="table table-dark">
+                <thead>
+                  <tr>
+                    <th scope="col">N</th>
+                    <th scope="col">Possible Board Placements</th>
+                    <th scope="col">Fundamental N-Queens Solutions</th>
+                    <th scope="col">All N-Queens Solutions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>6</td>
+                    <td>0</td>
+                    <td>0</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>84</td>
+                    <td>0</td>
+                    <td>0</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">4</th>
+                    <td>1820</td>
+                    <td>1</td>
+                    <td>2</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">5</th>
+                    <td>53130</td>
+                    <td>2</td>
+                    <td>10</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">6</th>
+                    <td>1947792</td>
+                    <td>1</td>
+                    <td>4</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">7</th>
+                    <td>85900584</td>
+                    <td>6</td>
+                    <td>40</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">8</th>
+                    <td>4426165368</td>
+                    <td>12</td>
+                    <td>92</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">9</th>
+                    <td>260887834350</td>
+                    <td>46</td>
+                    <td>352</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">10</th>
+                    <td>17310309456440</td>
+                    <td>92</td>
+                    <td>724</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">11</th>
+                    <td>1.276<strong> e+15</strong></td>
+                    <td>92</td>
+                    <td>724</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">12</th>
+                    <td>1.036<strong> e+17</strong></td>
+                    <td>1787</td>
+                    <td>14200</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">...</th>
+                    <td></td>
+                    <td>...</td>
+                    <td>...</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">27</th>
+                    <td>1.208 <strong>e+77</strong></td>
+                    <td>2.936<strong> e+16</strong></td>
+                    <td>2.349<strong> e+17</strong></td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>Note that 'Fundamental' solutions in the table above are all unique solutions to the N-queens problem that are not related by symmetry (since some solutions can be related by reflection or rotational symmetry). The 'All' solutions column counts all possible solutions, even if related by symmetry to another solution</p>
+
+              <p> To Be continued...</p>
+
               <pre><code>Example code block</code></pre>
               <p>Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p>
               <h3>Sub-heading</h3>
