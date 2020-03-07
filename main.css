@@ -91,11 +91,16 @@ JUMBOTRON
   font-size: 18px;
 }
 
-.profile-img {
+.cat-img {
+  display: block;
+  max-width: 720px;
   width: 100%;
-  padding: 10px 0;
-  border-radius: 10px;
+  border-radius: 20px;
+  margin: auto;
+  margin-bottom: 20px;
+  border: 1px gray solid;
 }
+
 
 /*
 ==========================
@@ -106,6 +111,15 @@ FOOTER
 #footer {
   color: #DFA95F;
   background-color: #273E47;
+}
+
+/*
+===========================
+CONTAINER
+===========================
+*/
+.container .cat-info {
+  margin-bottom: 40px;
 }
 
 /*
