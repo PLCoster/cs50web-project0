@@ -28,7 +28,7 @@ h1 {
   line-height: 44px;
 }
 h2 {
-  font-size: 24px;
+  font-size: 28px;
   line-height: 44px;
 }
 h3 {
@@ -134,6 +134,18 @@ BUTTONS
   border-color: #273E47;
 }
 
+.new-nick {
+  margin-bottom: 20px;
+}
 
+/*
+==========================
+BLOG
+==========================
+*/
+
+.blog-main {
+  margin-top: 100px;
+}
 
 
