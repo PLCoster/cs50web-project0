@@ -140,12 +140,49 @@ BUTTONS
 
 /*
 ==========================
+TABLES
+==========================
+*/
+
+table.table {
+  margin-bottom: 5px;
+}
+
+th, td {
+  font-size: 12px;
+  line-height: 12px;
+
+}
+
+/*
+==========================
 BLOG
 ==========================
 */
 
 .blog-main {
   margin-top: 100px;
+}
+
+/* Inherit from cat img */
+.blog-post img.blog-img.center {
+  display: block;
+  max-height: 300px;
+  margin: auto;
+  border: 1px gray solid;
+}
+
+img.blog-img + p {
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+}
+
+/*inherit from img.blog-img + p*/
+table + p {
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
 }
 
 

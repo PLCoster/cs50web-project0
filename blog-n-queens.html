@@ -53,32 +53,34 @@
 
             <div class="blog-post">
               <h2 class="blog-post-title">The N-Queens Puzzle - Part 1: All Solutions</h2>
-              <p class="blog-post-meta">March 7, 2020 by <a href="#">Paul</a></p>
+              <p class="blog-post-meta">March 7, 2020 by <a href="index.html">Paul</a></p>
 
-              <p>In this post I take a brief look at the N-Queens Puzzle, and some algorithms to solve it, including recursion and backtracking.</p>
+              <p>In these posts I take a brief look at the N-Queens Puzzle, and some algorithms to solve it, including recursion and backtracking.</p>
               <hr>
               <h3>The Puzzle</h3>
               <p> The <strong>N-Queens</strong> puzzle is a generalisation of the <strong>8-Queens</strong> puzzle originally published by Max Bezzel in 1848. The challenge of the 8-Queens puzzle is to place eight chess queens on a standard 8x8 chessboard such that no piece can take any other piece. In essence this means that no two queens can share the same row, column or diagonal. The <strong>N-Queens</strong> puzzle extends this to finding solutions for N chess queens being placed on an NxN chessboard.</p>
 
-              <p> Put an Image Here</p>
+              <img class="blog-img center" src="assets/Blog/n_queens1.png" alt="A standard chessboard with 8 queens placed such that they can't take one another">
+              <p class="blog-img-text">Fig. 1: One of 92 possible solutions for the 8-Queens Puzzle</p>
 
-              <p>In these posts we will take a look at using algorithms to answer two questions about the N-Queens Puzzle:
+              <p> These posts will be broken in to several sections, answering different questions:
                 <ol>
+                  <li><strong>What is the scaling of the N-Queens puzzle with N?</strong></li>
                   <li><strong>For a board of size N, how many solutions to the puzzle are there?</strong></li>
                   <li><strong>For a board of size N, how can we find any single solution to the puzzle?</strong></li>
                 </ol>
               </p>
+              <hr>
 
-              <p>In this first post we will look at writing an algorithm sort question 1.</p>
-
-              <h3>1. Recursively Finding All Valid Solutions:</h3>
+              <h3>1. What is the scaling of the N-Queens puzzle with N?</h3>
               <p>We can start to get an idea of the scaling of the N-Queens problem using combinatorics. Given N Queens and an NxN chessboard to place them on, how many ways can the queens be placed? The first Queen we try to place has N&sup2; positions it can be placed, the second has (N&sup2; - 1) positions etc., until we try to place the Nth queen which has (N&sup2; - (N - 1)) positions it can be placed. This gives us </p>
               <p><strong> N&sup2; *  (N&sup2; - 1) * (N&sup2; - 2) * ... * (N&sup2; - (N - 1)) </strong></p>
               <p>possible positions. Using factorials, this can be simplified to:</p>
               <p><strong>(N&sup2;)! / (N&sup2;-N)!</strong></p>
               <p>We also need to account for the fact that each of the N queens are equivalent to each other, so given a board with N queens on it, switching the positions of any of the queens does not give us a different solution. Essentially we care about the number of combinations that N queens can be placed on the NxN chessboard, not the number of permutations. Therefore we need to divide by number of permutations of N queens, which is N!. This gives the total number of ways to place N queens on an NxN chessboard as:</p>
               <p><strong>(N&sup2;)! / ((N&sup2;-N)! * N!)</strong></p>
-              <p> Using the above formula, we can calculate the number of different ways we can place N queens on the NxN chess board. In the table below this is calculated from N=1 to N=12, and N=27, alongside the known number os solutions to the N-Queens problem for each N. As of March 2020, the total number of solutions to the N-Queens problem has been calculated up to N=27 <a href="https://github.com/preusser/q27">(N=27 was determined in Sep 2016)</a>.</p>
+              <p> Using the above formula, we can calculate the number of different ways we can place N queens on the NxN chess board. In Table 1 below this is calculated from N=1 to N=12, and N=27, alongside the known number os solutions to the N-Queens problem for each N. As of March 2020, the total number of solutions to the N-Queens problem has been calculated up to N=27 <a href="https://github.com/preusser/q27">(N=27 was determined in Sep 2016)</a>.</p>
+
               <table class="table table-dark">
                 <thead>
                   <tr>
@@ -175,9 +177,10 @@
                   </tr>
                 </tbody>
               </table>
-              <p>Note that 'Fundamental' solutions in the table above are all unique solutions to the N-queens problem that are not related by symmetry (since some solutions can be related by reflection or rotational symmetry). The 'All' solutions column counts all possible solutions, even if related by symmetry to another solution</p>
 
-              <p> To Be continued...</p>
+              <p>Table 1: Information on the number of possible queen placements, 'fundamental' and 'all' solutions to the N-Queens problem for various values of N. Note that 'Fundamental' solutions in the table above are all unique solutions to the N-queens problem that are not related by symmetry (since some solutions can be related by reflection or rotational symmetry). The 'All' solutions column counts all possible solutions, even if related by symmetry to another solution</p>
+
+              <p>As can be seen from Table 1 above, the total number of possible board positions increases at an incredible rate as N increases. In fact, it is easy to show that the scaling of the problem is <em>O </em>(N<sup>2N</sup>) </p>
 
               <pre><code>Example code block</code></pre>
               <p>Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p>
