@@ -1,4 +1,5 @@
 /* Custom CSS Styles to override Bootstrap */
+
 /* 273E47
   BD632F
   D8973C
@@ -26,20 +27,16 @@ h1 {
   font-size: 36px;
   line-height: 44px;
 }
-
 h2 {
   font-size: 28px;
   line-height: 44px;
 }
-
 h3 {
   font-size: 21px;
 }
-
 h4 {
   font-size: 18px;
 }
-
 h5 {
   color: #a9b2b9;
   font-size: 14px;
@@ -56,14 +53,16 @@ cite, em {
 }
 
 .text-muted {
-  color: #273E47;
+  color:  #273E47;
 }
+
 
 /*
 ==========================
 NAVBAR
 ==========================
 */
+
 #navbar {
   font-weight: 400;
   background-color: #273E47;
@@ -82,6 +81,7 @@ NAVBAR
 JUMBOTRON
 ==========================
 */
+
 .jumbotron {
   padding-bottom: 0;
   margin-top: 20px;
@@ -101,11 +101,13 @@ JUMBOTRON
   border: 1px gray solid;
 }
 
+
 /*
 ==========================
 FOOTER
 ==========================
 */
+
 #footer {
   color: #DFA95F;
   background-color: #273E47;
@@ -125,9 +127,10 @@ CONTAINER
 BUTTONS
 ===========================
 */
+
 .btn-primary {
   color: #DFA95F;
-  background-color: #273E47;
+  background-color:  #273E47;
   border-color: #273E47;
 }
 
@@ -140,6 +143,7 @@ BUTTONS
 TABLES
 ==========================
 */
+
 table.table {
   margin-bottom: 5px;
 }
@@ -147,6 +151,7 @@ table.table {
 th, td {
   font-size: 12px;
   line-height: 12px;
+
 }
 
 /*
@@ -154,6 +159,7 @@ th, td {
 BLOG
 ==========================
 */
+
 .blog-main {
   margin-top: 100px;
   margin-bottom: 100px;
@@ -186,10 +192,11 @@ table + p {
 RESPONSIVE
 =============================
 */
+
 @media print {
-  .nickname-gen {
-    display: none;
+  .nickname-gen{
+    display:none;
   }
 }
 
-/*# sourceMappingURL=main.css.map */
+
