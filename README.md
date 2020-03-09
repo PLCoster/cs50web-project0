@@ -38,7 +38,7 @@ This project is a starting point for my personal homepage which I hope to contin
 * blog.html - similar to projects.html, this is a mockup for a page that will have links to blog posts, and currently has a single blog post accessible.
 * blog-n-queens.html - the start of a blog post about the N-Queens puzzle, which contains a table as well as images. An @media query in the main.scss stylesheet helps to resize the images here on smaller screens.
 
-*main.scss - SCSS style sheet using Sass variable to handle the main color scheme as well as nesting and inheritance where appropriate. This is converted to the main.css stylesheet by Sass, which is referenced by the website.
+* main.scss - SCSS style sheet using Sass variable to handle the main color scheme as well as nesting and inheritance where appropriate. This is converted to the main.css stylesheet by Sass, which is referenced by the website.
 
 * templates folder - contains a blog template for writing future blog posts.
 * assets folder - contains image assets for various pages on the site.
