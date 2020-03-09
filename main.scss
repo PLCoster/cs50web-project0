@@ -8,19 +8,31 @@
 
   light bg
   #E9ECEF
+
+
+/*
+  ========================================
+  SASS Variables
+  ========================================
+*/
+$primary-col: #273E47;
+$background-col: #E9ECEF;
+$highlight-col: #DFA95F;
+$highlight-hov: #EDE6D1;
+
 /*
   ========================================
   Custom styles
   ========================================
 */
 body {
-  background-color: #E9ECEF;
-  color: #273E47;
+  background-color: $background-col;
+  color: $primary-col;
   font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 h1, h2, h3, h4 {
-  color: #273E47;
+  color: $primary-col;
 }
 
 h1 {
@@ -37,12 +49,6 @@ h3 {
 h4 {
   font-size: 18px;
 }
-h5 {
-  color: #a9b2b9;
-  font-size: 14px;
-  font-weight: 400;
-  text-transform: uppercase;
-}
 
 strong {
   font-weight: 400;
@@ -53,7 +59,7 @@ cite, em {
 }
 
 .text-muted {
-  color:  #273E47;
+  color:  $primary-col;
 }
 
 
@@ -65,15 +71,15 @@ NAVBAR
 
 #navbar {
   font-weight: 400;
-  background-color: #273E47;
+  background-color: $primary-col;
 }
 
 #logo {
-  color: #DFA95F;
+  color: $highlight-col;
 }
 
 #logo:hover {
-  color: #EDE6D1;
+  color: $highlight-hov;
 }
 
 /*
@@ -85,11 +91,13 @@ JUMBOTRON
 .jumbotron {
   padding-bottom: 0;
   margin-top: 20px;
+
+  .lead {
+    font-size: 18px;
+  }
 }
 
-.lead {
-  font-size: 18px;
-}
+
 
 .cat-img {
   display: block;
@@ -109,8 +117,8 @@ FOOTER
 */
 
 #footer {
-  color: #DFA95F;
-  background-color: #273E47;
+  color: $highlight-col;
+  background-color: $primary-col;
 }
 
 /*
@@ -129,10 +137,17 @@ BUTTONS
 */
 
 .btn-primary {
-  color: #DFA95F;
-  background-color:  #273E47;
-  border-color: #273E47;
+  color: $highlight-col;
+  background-color:  $primary-col;
+  border-color: $primary-col;
 }
+
+.btn-primary:hover {
+  @extend .btn-primary;
+  color: $highlight-hov;
+}
+
+
 
 .new-nick {
   margin-bottom: 20px;
@@ -174,14 +189,7 @@ BLOG
   border: 1px gray solid;
 }
 
-img.blog-img + p {
-  font-size: 12px;
-  font-weight: 700;
-  text-align: center;
-}
-
-/*inherit from img.blog-img + p*/
-table + p {
+img.blog-img + p, table + p {
   font-size: 12px;
   font-weight: 700;
   text-align: center;
@@ -196,6 +204,13 @@ RESPONSIVE
 @media print {
   .nickname-gen{
     display:none;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .blog-post img.blog-img.center {
+    max-width: 90vw;
+    min-width: 300px;
   }
 }
 

@@ -7,6 +7,13 @@
 
   light bg
   #E9ECEF
+
+
+/*
+  ========================================
+  SASS Variables
+  ========================================
+*/
 /*
   ========================================
   Custom styles
@@ -38,13 +45,6 @@ h3 {
 
 h4 {
   font-size: 18px;
-}
-
-h5 {
-  color: #a9b2b9;
-  font-size: 14px;
-  font-weight: 400;
-  text-transform: uppercase;
 }
 
 strong {
@@ -86,8 +86,7 @@ JUMBOTRON
   padding-bottom: 0;
   margin-top: 20px;
 }
-
-.lead {
+.jumbotron .lead {
   font-size: 18px;
 }
 
@@ -125,10 +124,14 @@ CONTAINER
 BUTTONS
 ===========================
 */
-.btn-primary {
+.btn-primary, .btn-primary:hover {
   color: #DFA95F;
   background-color: #273E47;
   border-color: #273E47;
+}
+
+.btn-primary:hover {
+  color: #EDE6D1;
 }
 
 .new-nick {
@@ -168,14 +171,7 @@ BLOG
   border: 1px gray solid;
 }
 
-img.blog-img + p {
-  font-size: 12px;
-  font-weight: 700;
-  text-align: center;
-}
-
-/*inherit from img.blog-img + p*/
-table + p {
+img.blog-img + p, table + p {
   font-size: 12px;
   font-weight: 700;
   text-align: center;
@@ -189,6 +185,12 @@ RESPONSIVE
 @media print {
   .nickname-gen {
     display: none;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .blog-post img.blog-img.center {
+    max-width: 90vw;
+    min-width: 300px;
   }
 }
 
